@@ -4,12 +4,14 @@ Resultats_Entrainements_Tuning/
 runs/
 test/
 train/
-*ip
+datasets/
+*.ip
 *.mp4
 *.pt
-<<<<<<< Updated upstream
+*.onnx
+*.engine
+.venv/
+venv/
 my_env/
 __pycache__/
-=======
-my_env/
->>>>>>> Stashed changes
+*.pyc
