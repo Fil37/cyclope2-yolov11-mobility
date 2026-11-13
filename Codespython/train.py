@@ -7,7 +7,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 parent_dir = BASE_DIR.parent;
-def train_model(text, save_dir):
+def train_model():
     epochs = 70
     batch = 16
 
@@ -17,7 +17,7 @@ def train_model(text, save_dir):
     print(f"Batch size              : {batch}")
     print("====================================")
 
-    # Vérification GPU
+    # VÃ©rification GPU
     print("CUDA disponible :", torch.cuda.is_available())
 
     if torch.cuda.is_available():
@@ -27,7 +27,7 @@ def train_model(text, save_dir):
         print("?? GPU non detecte  entrainement CPU")
         device = "cpu"
 
-    # Chargement du modèle
+    # Chargement du modÃ¨le
     model = YOLO(parent_dir/"yolo11m.pt")
 
     try:
@@ -70,7 +70,7 @@ def train_model(text, save_dir):
     # Export ONNX
     model.export(format="onnx")
     
-# après l'entraînement
+# aprÃ¨s l'entraÃ®nement
 
     subprocess.call([parent_dir/"powerbat.bat"], shell=True)
 
