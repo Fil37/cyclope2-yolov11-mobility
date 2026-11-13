@@ -76,6 +76,6 @@ def train_model():
 
 if __name__ == "__main__":
     train_model()
-model.fit(x_train, y_train, epochs=10)
+
 
 
